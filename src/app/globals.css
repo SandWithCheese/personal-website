@@ -1,27 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 251 62% 95%;
+    --foreground: 249 61% 6%;
+    --card: 251 62% 95%;
+    --card-foreground: 249 61% 6%;
+    --popover: 251 62% 95%;
+    --popover-foreground: 249 61% 6%;
+    --primary: 250 64% 73%;
+    --primary-foreground: 249 61% 6%;
+    --secondary: 250 63% 80%;
+    --secondary-foreground: 249 61% 6%;
+    --muted: 251 63% 20%;
+    --muted-foreground: 249 61% 70%;
+    --accent: 250 63% 40%;
+    --accent-foreground: 251 62% 95%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 249 61% 6%;
+    --border: 251 63% 20%;
+    --input: 251 63% 20%;
+    --ring: 250 63% 40%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 251 62% 5%;
+    --foreground: 249 61% 94%;
+    --card: 251 62% 5%;
+    --card-foreground: 249 61% 94%;
+    --popover: 251 62% 5%;
+    --popover-foreground: 249 61% 94%;
+    --primary: 250 64% 27%;
+    --primary-foreground: 249 61% 94%;
+    --secondary: 250 63% 20%;
+    --secondary-foreground: 249 61% 94%;
+    --muted: 251 63% 80%;
+    --muted-foreground: 249 61% 94%;
+    --accent: 250 63% 60%;
+    --accent-foreground: 251 62% 5%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 250 61% 10%;
+    --border: 251 62% 60%;
+    --input: 251 63% 80%;
+    --ring: 250 63% 60%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: [full-width-start] 200px [content-start] 1fr [content-end] 200px [full-width-end];
+  width: 100%;
+  row-gap: 8rem;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    grid-template-columns: [full-width-start] 100px [content-start] 1fr [content-end] 100px [full-width-end];
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: [full-width-start] 25px [content-start] 1fr [content-end] 25px [full-width-end];
+  }
+
+  h1 {
+    font-size: 32px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+  }
+}
+
+.wrapper > * {
+  grid-column: content;
+}
+
+.wrapper > .grid-full-width {
+  grid-column: full-width;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
 }
