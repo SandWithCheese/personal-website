@@ -30,7 +30,7 @@ function Navbar() {
           </Link>
           <ThemeToggler />
 
-          <Sheet className="lg:hidden">
+          <Sheet>
             <SheetTrigger className="lg:hidden">
               <Bars3Icon className="w-6 h-6 lg:hidden" />
             </SheetTrigger>
