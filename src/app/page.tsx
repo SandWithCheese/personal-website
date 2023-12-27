@@ -3,6 +3,51 @@ import { getProjects } from "../../sanity/sanity-utils"
 import { Project } from "../../types/Project"
 import Link from "next/link"
 import CardProject from "@/components/CardProject"
+import { Metadata, Viewport } from "next"
+
+export const metadata: Metadata = {
+  title: "Sandwicheese",
+  description:
+    "Hi! I'm Naufal, a software engineer and CTF enthusiast. Committed to mastering both domains, I focus on developing secure software and conquering CTF challenges. Seeking to gain more experience and knowledge to make a positive impact in these fields. Ready to connect and collaborate with fellow enthusiasts.",
+  generator: "Next.js",
+  applicationName: "Sandwicheese",
+  keywords: [
+    "Ahmad Naufal Ramadan",
+    "Sandwicheese",
+    "Ahmad",
+    "Naufal",
+    "Ramadan",
+    "Personal Website",
+    "Teknik Informatika",
+    "Institut Teknologi Bandung",
+    "ITB",
+  ],
+  verification: {
+    google: "google",
+    yandex: "yandex",
+    yahoo: "yahoo",
+  },
+  openGraph: {
+    title: "Sandwicheese",
+    description:
+      "I'm Naufal, a software engineer and CTF enthusiast. Committed to mastering both domains, I focus on developing secure software and conquering CTF challenges. Seeking to gain more experience and knowledge to make a positive impact in these fields. Ready to connect and collaborate with fellow enthusiasts.",
+    url: "https://sandwicheese.vercel.app/",
+    siteName: "Sandwicheese",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sandwicheese",
+    description:
+      "I'm Naufal, a software engineer and CTF enthusiast. Committed to mastering both domains, I focus on developing secure software and conquering CTF challenges. Seeking to gain more experience and knowledge to make a positive impact in these fields. Ready to connect and collaborate with fellow enthusiasts.",
+  },
+}
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#271971",
+}
 
 export default async function Home() {
   const projects = await getProjects()
@@ -53,12 +98,12 @@ export default async function Home() {
       >
         <main className="flex flex-col gap-4 max-w-md items-center xl:my-auto">
           <h3 className="font-semibold">About Me</h3>
-          <p className="mb-4">
-            Vivamus maximus metus id urna gravida tempor. Quisque odio nisi,
-            pulvinar eget lacus eget, aliquam commodo justo. Nulla pulvinar
-            nulla et nulla rutrum posuere. Duis dapibus accumsan massa, at
-            tincidunt quam tempus in. Fusce ultricies porta porttitor. Nam
-            luctus rhoncus erat, sit amet fringilla augue euismod quis.{" "}
+          <p className="mb-4 text-justify">
+            I&apos;m Naufal, a software engineer and CTF enthusiast. Committed
+            to mastering both domains, I focus on developing secure software and
+            conquering CTF challenges. Seeking to gain more experience and
+            knowledge to make a positive impact in these fields. Ready to
+            connect and collaborate with fellow enthusiasts.
           </p>
           <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-between gap-8 min-w-full">
             <button className="bg-primary py-3 rounded-md sm:w-48 hover:bg-secondary hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out">

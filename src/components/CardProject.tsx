@@ -25,7 +25,7 @@ function CardProject(props: { project: Project }) {
         </div>
         <div className="px-6 flex flex-col gap-4">
           <CardTitle className="font-medium">{props.project.name}</CardTitle>
-          <CardDescription className="text-md text-foreground">
+          <CardDescription className="text-md text-foreground text-justify">
             <PortableText value={props.project.description} />
           </CardDescription>
         </div>

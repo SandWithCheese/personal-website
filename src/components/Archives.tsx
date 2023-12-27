@@ -29,7 +29,9 @@ function Archives(props: { archive: Archive }) {
           <h3 className="text-2xl leading-none tracking-tight font-medium">
             {props.archive.name}
           </h3>
-          <PortableText value={props.archive.description} />
+          <div className="text-justify">
+            <PortableText value={props.archive.description} />
+          </div>
         </div>
         <div className="flex flex-col gap-4 p-4">
           <p className="font-semibold">{dateString}</p>
