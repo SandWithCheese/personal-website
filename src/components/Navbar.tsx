@@ -2,11 +2,7 @@ import Link from "next/link"
 import ThemeToggler from "./ThemeToggler"
 import { Bars3Icon } from "@heroicons/react/24/outline"
 
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 function Navbar() {
   return (
@@ -19,7 +15,7 @@ function Navbar() {
           <Link href="#" className="hover:underline hidden lg:block">
             Get The Flag!
           </Link>
-          <Link href="#" className="hover:underline hidden lg:block">
+          <Link href="/projects" className="hover:underline hidden lg:block">
             Projects
           </Link>
           <Link href="#" className="hover:underline hidden lg:block">
@@ -35,7 +31,7 @@ function Navbar() {
               <h2 className="mb-4">Explore</h2>
               <div className="flex flex-col gap-4 text-xl">
                 <Link href="#">Get The Flag!</Link>
-                <Link href="#">Projects</Link>
+                <Link href="/projects">Projects</Link>
                 <Link href="#">Archives</Link>
               </div>
             </SheetContent>
