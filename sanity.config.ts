@@ -1,6 +1,7 @@
 import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
 import schemas from "./sanity/schemas"
+import { codeInput } from "@sanity/code-input"
 
 const config = defineConfig({
   title: "Personal Website",
@@ -11,7 +12,7 @@ const config = defineConfig({
 
   basePath: "/admin",
 
-  plugins: [deskTool()],
+  plugins: [deskTool(), codeInput()],
 
   schema: { types: schemas },
 })
