@@ -85,9 +85,10 @@ export default async function Home() {
       <div id="projects" className="flex flex-col gap-8">
         <h3 className="text-center mt-4">My Projects</h3>
         <div className="flex flex-wrap justify-center gap-8">
-          {projects.map((project: Project) => (
-            <CardProject project={project} key={project._id} />
-          ))}
+          {projects &&
+            projects.map((project: Project) => (
+              <CardProject project={project} key={project._id} />
+            ))}
         </div>
         <Link
           href="/projects"
