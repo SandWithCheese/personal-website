@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center lg:flex-row justify-between h-[calc(100vh-20rem)]">
+      <div className="flex flex-col items-center lg:flex-row justify-between h-[calc(100vh-17rem)]">
         <main className="max-w-xl flex flex-col gap-2 text-center lg:text-start">
           <h3>Hello World! Meet</h3>
           <div className="bg-primary w-[200px] h-[200px] flex justify-center rounded-full mx-auto my-8 lg:hidden">
@@ -21,7 +21,7 @@ export default async function Home() {
               alt="Foto"
             />
           </div>
-          <h1>Ahmad Naufal Ramadan</h1>
+          <h1 className="font-semibold">Ahmad Naufal Ramadan</h1>
           <h3>
             Informatics Engineering student from Bandung Institute of Technology
           </h3>
@@ -29,7 +29,7 @@ export default async function Home() {
           <div>
             <Link
               href="#bio"
-              className="bg-primary px-12 py-3 rounded-md hover:bg-background hover:outline hover:outline-primary hover:outline-2 transition ease-in-out"
+              className="bg-primary font px-12 py-3 rounded-md hover:bg-background hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out"
             >
               Get to Know Him!
             </Link>
@@ -52,7 +52,7 @@ export default async function Home() {
         className="flex flex-col-reverse items-center xl:flex-row-reverse justify-center gap-16 xl:gap-48 bg-secondary grid-full-width h-svh px-6"
       >
         <main className="flex flex-col gap-4 max-w-md items-center xl:my-auto">
-          <h3>About Me</h3>
+          <h3 className="font-semibold">About Me</h3>
           <p className="mb-4">
             Vivamus maximus metus id urna gravida tempor. Quisque odio nisi,
             pulvinar eget lacus eget, aliquam commodo justo. Nulla pulvinar
@@ -61,12 +61,12 @@ export default async function Home() {
             luctus rhoncus erat, sit amet fringilla augue euismod quis.{" "}
           </p>
           <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-between gap-8 min-w-full">
-            <button className="bg-primary py-3 rounded-md sm:w-48 hover:bg-secondary hover:outline hover:outline-primary hover:outline-2 transition ease-in-out">
+            <button className="bg-primary py-3 rounded-md sm:w-48 hover:bg-secondary hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out">
               Get My CV
             </button>
             <Link
               href="#projects"
-              className="sm:w-48 py-3 rounded-md text-center outline outline-primary outline-2 hover:bg-primary transition ease-in-out"
+              className="sm:w-48 py-3 rounded-md text-center outline outline-primary outline-2 hover:bg-primary transition-transform ease-in-out"
             >
               See My Projects
             </Link>
@@ -83,7 +83,7 @@ export default async function Home() {
         </aside>
       </div>
       <div id="projects" className="flex flex-col gap-8">
-        <h3 className="text-center mt-4">My Projects</h3>
+        <h3 className="text-center mt-4 font-semibold">My Projects</h3>
         <div className="flex flex-wrap justify-center gap-8">
           {projects &&
             projects.map((project: Project) => (
@@ -92,7 +92,7 @@ export default async function Home() {
         </div>
         <Link
           href="/projects"
-          className="self-center bg-primary px-12 py-3 rounded-md hover:bg-background hover:outline hover:outline-primary hover:outline-2 transition ease-in-out"
+          className="self-center bg-primary px-12 py-3 rounded-md hover:bg-background hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out"
         >
           View More
         </Link>

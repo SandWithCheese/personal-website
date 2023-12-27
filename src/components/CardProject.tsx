@@ -13,19 +13,26 @@ import Link from "next/link"
 
 function CardProject(props: { project: Project }) {
   return (
-    <Card className="bg-secondary flex flex-col rounded-xl gap-4 min-h-[600px] max-w-96 border-none">
-      <CardHeader>
-        <CardTitle>{props.project.name}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-8 flex-grow">
-        <Image src={props.project.image} width={500} height={500} alt="" />
-        <CardDescription className="text-md text-foreground">
-          <PortableText value={props.project.description} />
-        </CardDescription>
+    <Card className="bg-secondary flex flex-col rounded-xl gap-4 min-h-[550px] max-w-96 border-none hover:scale-105 transition-transform ease-in-out">
+      <CardContent className="flex flex-col gap-8 flex-grow p-0">
+        <div className="relative w-full aspect-video">
+          <Image
+            src={props.project.image}
+            fill
+            alt="image"
+            className="rounded-t-xl object-cover"
+          />
+        </div>
+        <div className="px-6 flex flex-col gap-4">
+          <CardTitle className="font-medium">{props.project.name}</CardTitle>
+          <CardDescription className="text-md text-foreground">
+            <PortableText value={props.project.description} />
+          </CardDescription>
+        </div>
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-4">
         <div>
-          <p>Tech Stacks:</p>
+          <p className="font-semibold">Tech Stacks:</p>
           <p>{props.project.techstack.join(", ")}</p>
         </div>
         <Link

@@ -12,7 +12,7 @@ function Navbar() {
           <Link href="/">Sandwicheese</Link>
         </h3>
         <div className="flex gap-8 sm:gap-12 items-center">
-          <Link href="#" className="hover:underline hidden lg:block">
+          <Link href="/coming-soon" className="hover:underline hidden lg:block">
             Get The Flag!
           </Link>
           <Link href="/projects" className="hover:underline hidden lg:block">
@@ -30,7 +30,7 @@ function Navbar() {
             <SheetContent>
               <h2 className="mb-4">Explore</h2>
               <div className="flex flex-col gap-4 text-xl">
-                <Link href="#">Get The Flag!</Link>
+                <Link href="/coming-soon">Get The Flag!</Link>
                 <Link href="/projects">Projects</Link>
                 <Link href="/archives">Archives</Link>
               </div>

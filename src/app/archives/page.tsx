@@ -12,7 +12,7 @@ async function page() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1>Archives</h1>
+      <h2 className="font-medium text-center sm:text-start">Archives</h2>
       <div className="flex flex-col items-center sm:grid sm:grid-cols-12 gap-8">
         {archives &&
           archives.map((archive: Archive) => (

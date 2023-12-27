@@ -12,23 +12,27 @@ function Archives(props: { archive: Archive }) {
   })
 
   return (
-    <div className="bg-secondary max-w-96 sm:w-full sm:col-span-6 lg:col-span-4 xl:col-span-3 rounded-lg">
+    <div className="flex flex-col bg-secondary max-w-96 sm:w-full sm:col-span-6 lg:col-span-6 xl:col-span-4 rounded-lg hover:scale-105 transition-transform ease-in-out min-h-[450px]">
       <Link
         href={`/archives/${props.archive.slug.current}`}
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-4 flex-grow"
       >
         <div className="relative w-full aspect-video">
           <Image
             src={props.archive.thumbnail}
-            alt=""
+            alt="thumbnail"
             fill
             className="rounded-t-lg object-cover"
           />
         </div>
-        <div className="flex flex-col gap-4 p-4">
-          <h3>{props.archive.name}</h3>
+        <div className="flex-grow flex flex-col gap-4 p-4">
+          <h3 className="text-2xl leading-none tracking-tight font-medium">
+            {props.archive.name}
+          </h3>
           <PortableText value={props.archive.description} />
-          <p>{dateString}</p>
+        </div>
+        <div className="flex flex-col gap-4 p-4">
+          <p className="font-semibold">{dateString}</p>
         </div>
       </Link>
     </div>

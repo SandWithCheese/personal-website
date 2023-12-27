@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <ThemeProvider attribute="class" defaultTheme="dark">
         <body className={inter.className}>
-          <div className="flex flex-col gap-32 pt-8">
+          <div className="flex flex-col gap-20 pt-8">
             <Navbar />
             <main className="wrapper">{children}</main>
             <Footer />
