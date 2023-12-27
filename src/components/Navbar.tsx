@@ -5,9 +5,6 @@ import { Bars3Icon } from "@heroicons/react/24/outline"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 
