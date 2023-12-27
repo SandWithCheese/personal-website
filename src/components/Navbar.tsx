@@ -15,7 +15,7 @@ function Navbar() {
           <Link href="#" className="hover:underline hidden lg:block">
             Get The Flag!
           </Link>
-          <Link href="#" className="hover:underline hidden lg:block">
+          <Link href="/projects" className="hover:underline hidden lg:block">
             Projects
           </Link>
           <Link href="/archives" className="hover:underline hidden lg:block">
@@ -31,7 +31,7 @@ function Navbar() {
               <h2 className="mb-4">Explore</h2>
               <div className="flex flex-col gap-4 text-xl">
                 <Link href="#">Get The Flag!</Link>
-                <Link href="#">Projects</Link>
+                <Link href="/projects">Projects</Link>
                 <Link href="/archives">Archives</Link>
               </div>
             </SheetContent>

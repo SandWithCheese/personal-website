@@ -91,7 +91,7 @@ export default async function Home() {
             ))}
         </div>
         <Link
-          href=""
+          href="/projects"
           className="self-center bg-primary px-12 py-3 rounded-md hover:bg-background hover:outline hover:outline-primary hover:outline-2 transition ease-in-out"
         >
           View More
