@@ -5,7 +5,7 @@ function Footer() {
     <footer className="wrapper">
       <div className="bg-secondary grid-full-width flex flex-col gap-6 py-6">
         <div className="flex justify-center gap-6">
-          <Link href="mailto:naufalahmad022@gmail.com">
+          <Link href="mailto:naufalahmad022@gmail.com" aria-label="Email">
             <svg
               width="48"
               height="48"
@@ -20,7 +20,11 @@ function Footer() {
               />
             </svg>
           </Link>
-          <Link href="https://github.com/SandWithCheese" target="_blank">
+          <Link
+            href="https://github.com/SandWithCheese"
+            target="_blank"
+            aria-label="Github"
+          >
             <svg
               width="48"
               height="48"
@@ -73,6 +77,7 @@ function Footer() {
           <Link
             href="https://www.linkedin.com/in/ahmad-naufal-ramadan/"
             target="_blank"
+            aria-label="LinkedIn"
           >
             <svg
               width="48"
@@ -88,7 +93,11 @@ function Footer() {
               />
             </svg>
           </Link>
-          <Link href="https://www.instagram.com/naufal.rmdn/" target="_blank">
+          <Link
+            href="https://www.instagram.com/naufal.rmdn/"
+            target="_blank"
+            aria-label="Instagram"
+          >
             <svg
               width="48"
               height="48"

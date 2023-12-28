@@ -25,7 +25,7 @@ function Navbar() {
 
           <Sheet>
             <SheetTrigger className="lg:hidden">
-              <Bars3Icon className="w-6 h-6 lg:hidden" />
+              <Bars3Icon aria-label="Bars icon" className="w-6 h-6 lg:hidden" />
             </SheetTrigger>
             <SheetContent>
               <h2 className="mb-4">Explore</h2>

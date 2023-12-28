@@ -8,6 +8,7 @@ function ThemeToggler() {
 
   return (
     <button
+      aria-label="Toggle theme"
       className="w-6 h-6"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >

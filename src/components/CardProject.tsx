@@ -39,6 +39,7 @@ function CardProject(props: { project: Project }) {
           href={props.project.url}
           target="_blank"
           className="justify-self-end self-start"
+          aria-label={props.project.name}
         >
           <svg
             viewBox="0 0 128 128"

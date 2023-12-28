@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "ITB",
   ],
   verification: {
-    google: "google",
+    google: "fv_CNbFwrtMZ1V0Z2RV4p3t48ULjscLJ97A_P08DT8E",
     yandex: "yandex",
     yahoo: "yahoo",
   },
