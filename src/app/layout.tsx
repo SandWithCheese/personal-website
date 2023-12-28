@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Sandwicheese",
   description: "Sandwicheese's personal website",
-  robots: { index: false, follow: false },
   verification: {
     google: "fv_CNbFwrtMZ1V0Z2RV4p3t48ULjscLJ97A_P08DT8E",
   },
