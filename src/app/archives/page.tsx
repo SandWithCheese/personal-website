@@ -3,6 +3,8 @@ import { Archive } from "../../../types/Archive"
 import { getArchives } from "../../../sanity/sanity-utils"
 import { Skeleton } from "@/components/ui/skeleton"
 
+export const revalidate = 60
+
 async function page() {
   const archives = await getArchives()
 

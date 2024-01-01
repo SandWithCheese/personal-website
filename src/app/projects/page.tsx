@@ -3,6 +3,8 @@ import { getProjects } from "../../../sanity/sanity-utils"
 import { Project } from "../../../types/Project"
 import { Skeleton } from "@/components/ui/skeleton"
 
+export const revalidate = 60
+
 async function page() {
   const projects = await getProjects()
 
