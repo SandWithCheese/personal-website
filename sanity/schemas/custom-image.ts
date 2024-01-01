@@ -10,9 +10,6 @@ const customImage = {
       title: "Alternative Text",
       name: "alt",
       type: "string",
-      options: {
-        isHighlighted: true,
-      },
     },
   ],
 }

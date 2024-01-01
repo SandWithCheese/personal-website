@@ -4,7 +4,7 @@ import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import urlBuilder from "@sanity/image-url"
 import { getImageDimensions } from "@sanity/asset-utils"
-import customImage from "../../../../sanity/schemas/custom-image"
+import Link from "next/link"
 
 export const revalidate = 60
 
@@ -38,10 +38,17 @@ async function page({ params }: { params: { slug: string } }) {
         />
       </div>
 
-      <PortableText
-        value={archive.content}
-        components={{ types: { customImage: ImageComponent } }}
-      />
+      <div className="flex flex-col gap-8 justify-self-center xl:w-[900px] leading-8 text-base sm:text-lg">
+        <PortableText
+          value={archive.content}
+          components={{
+            types: {
+              customImage: ImageComponent,
+              link: hyperlinkComponent,
+            },
+          }}
+        />
+      </div>
     </div>
   )
 }
@@ -65,6 +72,18 @@ const ImageComponent = ({
       />
       <p className="text-center">{value.alt}</p>
     </div>
+  )
+}
+
+const hyperlinkComponent = ({
+  value,
+}: {
+  value: { href: string; hyperlink: string }
+}) => {
+  return (
+    <Link href={value.href} target="_blank" className="underline">
+      {value.hyperlink}
+    </Link>
   )
 }
 

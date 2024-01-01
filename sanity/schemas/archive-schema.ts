@@ -1,4 +1,5 @@
 import customImage from "./custom-image"
+import externalLink from "./external-link"
 
 const archive = {
   name: "archive",
@@ -41,7 +42,7 @@ const archive = {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }, customImage],
+      of: [{ type: "block" }, customImage, externalLink],
     },
   ],
 }
