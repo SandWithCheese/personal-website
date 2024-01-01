@@ -1,3 +1,5 @@
+import customImage from "./custom-image"
+
 const archive = {
   name: "archive",
   title: "Archives",
@@ -39,7 +41,7 @@ const archive = {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }, { type: "image" }],
+      of: [{ type: "block" }, customImage],
     },
   ],
 }

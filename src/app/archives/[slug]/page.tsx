@@ -4,6 +4,7 @@ import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import urlBuilder from "@sanity/image-url"
 import { getImageDimensions } from "@sanity/asset-utils"
+import customImage from "../../../../sanity/schemas/custom-image"
 
 export const revalidate = 60
 
@@ -39,25 +40,30 @@ async function page({ params }: { params: { slug: string } }) {
 
       <PortableText
         value={archive.content}
-        components={{ types: { image: ImageComponent } }}
+        components={{ types: { customImage: ImageComponent } }}
       />
     </div>
   )
 }
 
-const ImageComponent = ({ value }: { value: { asset: { _ref: string } } }) => {
+const ImageComponent = ({
+  value,
+}: {
+  value: { asset: { _ref: string }; alt: string }
+}) => {
   const { width, height } = getImageDimensions(value)
   return (
-    <div className="max-w-[600px] self-center">
+    <div className="max-w-[600px] self-center flex flex-col gap-2">
       <Image
         src={urlBuilder({ projectId: "s4v7i3a0", dataset: "production" })
           .image(value)
           .auto("format")
           .url()}
-        alt={value.asset._ref}
+        alt={value.alt}
         width={width}
         height={height}
       />
+      <p className="text-center">{value.alt}</p>
     </div>
   )
 }
