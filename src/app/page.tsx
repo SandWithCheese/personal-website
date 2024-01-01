@@ -131,9 +131,11 @@ export default async function Home() {
         <h3 className="text-center mt-4 font-semibold">My Projects</h3>
         <div className="flex flex-wrap justify-center gap-8">
           {projects &&
-            projects.map((project: Project) => (
-              <CardProject project={project} key={project._id} />
-            ))}
+            projects
+              .slice(0, 3)
+              .map((project: Project) => (
+                <CardProject project={project} key={project._id} />
+              ))}
         </div>
         <Link
           href="/projects"
