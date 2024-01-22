@@ -12,3 +12,10 @@ export type Archive = {
   thumbnail: string
   content: PortableTextBlock[]
 }
+
+export type Description = {
+  text: string
+  _key: string
+  _type: string
+  marks: string[]
+}

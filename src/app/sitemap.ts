@@ -1,5 +1,7 @@
 import { getArchives } from "../../sanity/sanity-utils"
 
+export const revalidate = 60
+
 const URL = "https://sandwicheese.vercel.app"
 
 export default async function sitemap() {

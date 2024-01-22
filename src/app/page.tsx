@@ -35,12 +35,28 @@ export const metadata: Metadata = {
     siteName: "Sandwicheese",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://sandwicheese.vercel.app/opengraph-image.png",
+        width: 512,
+        height: 512,
+        alt: "Sandwicheese",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sandwicheese",
     description:
       "I'm Naufal, a software engineer and CTF enthusiast. Committed to mastering both domains, I focus on developing secure software and conquering CTF challenges. Seeking to gain more experience and knowledge to make a positive impact in these fields. Ready to connect and collaborate with fellow enthusiasts.",
+    images: [
+      {
+        url: "https://sandwicheese.vercel.app/twitter-image.png",
+        width: 512,
+        height: 512,
+        alt: "Sandwicheese",
+      },
+    ],
   },
 }
 
@@ -56,7 +72,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center lg:flex-row justify-between h-[calc(100vh-17rem)]">
+      <div className="flex flex-col items-center lg:flex-row justify-between min-h-[calc(100vh-17rem)] overflow-visible">
         <main className="max-w-xl flex flex-col gap-2 text-center lg:text-start">
           <h3>Hello World! Meet</h3>
           <div className="bg-primary w-[200px] h-[200px] flex justify-center rounded-full mx-auto my-8 lg:hidden">
@@ -96,7 +112,7 @@ export default async function Home() {
       </div>
       <div
         id="bio"
-        className="flex flex-col-reverse items-center xl:flex-row-reverse justify-center gap-16 xl:gap-48 bg-secondary grid-full-width h-svh px-6"
+        className="flex flex-col-reverse items-center xl:flex-row-reverse justify-center gap-16 xl:gap-48 bg-secondary grid-full-width min-h-svh py-24 overflow-visible px-6"
       >
         <main className="flex flex-col gap-4 max-w-md items-center xl:my-auto">
           <h3 className="font-semibold">About Me</h3>

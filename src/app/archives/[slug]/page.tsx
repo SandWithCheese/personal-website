@@ -1,12 +1,76 @@
 import { Skeleton } from "@/components/ui/skeleton"
-import { getArchive } from "../../../../sanity/sanity-utils"
+import { getArchive, getArchives } from "../../../../sanity/sanity-utils"
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import urlBuilder from "@sanity/image-url"
 import { getImageDimensions } from "@sanity/asset-utils"
 import Link from "next/link"
+import type { Metadata, Viewport } from "next"
+import { Description } from "../../../../types/Archive"
 
 export const revalidate = 60
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#271971",
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata | undefined> {
+  const archive = await getArchive(params.slug)
+  const archives = await getArchives()
+
+  if (archive === null || archives === null) {
+    return undefined
+  }
+
+  const id = archive._id
+  const index = archives.findIndex((archive) => archive._id === id)
+
+  const description = archives[index].description[0].children as Description[]
+  const descriptionText = description[0].text
+
+  return {
+    title: archive.name,
+    description: descriptionText,
+    generator: "Next.js",
+    applicationName: "Sandwicheese",
+    keywords: [
+      "Sandwicheese",
+      "Ahmad Naufal Ramadan",
+      ...archive.name.split(" "),
+    ],
+    verification: {
+      google: "fv_CNbFwrtMZ1V0Z2RV4p3t48ULjscLJ97A_P08DT8E",
+      yandex: "yandex",
+      yahoo: "yahoo",
+    },
+    openGraph: {
+      title: archive.name,
+      description: descriptionText,
+      url: `https://sandwicheese.vercel.app/archives/${params.slug}`,
+      siteName: "Sandwicheese",
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: archive.thumbnail,
+          width: 1280,
+          height: 720,
+          alt: archive.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: archive.name,
+      description: descriptionText,
+    },
+  }
+}
 
 async function page({ params }: { params: { slug: string } }) {
   const archive = await getArchive(params.slug)
