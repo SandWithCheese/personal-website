@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 function Navbar() {
   return (
     <header className="wrapper">
-      <nav className="flex justify-between items-center">
+      <nav className="flex justify-between items-center py-8">
         <h3>
           <Link href="/">Sandwicheese</Link>
         </h3>

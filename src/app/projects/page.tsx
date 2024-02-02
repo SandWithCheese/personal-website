@@ -72,7 +72,7 @@ async function page() {
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 py-12">
       <h2 className="text-center font-medium">My Projects</h2>
       <div className="flex flex-wrap justify-center gap-8">
         {projects &&

@@ -72,7 +72,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center lg:flex-row justify-between min-h-[calc(100vh-17rem)] overflow-visible">
+      <div className="flex flex-col items-center lg:flex-row justify-between min-h-[calc(100vh-100px)] overflow-visible py-12 lg:pb-24">
         <main className="max-w-xl flex flex-col gap-2 text-center lg:text-start">
           <h3>Hello World! Meet</h3>
           <div className="bg-primary w-[200px] h-[200px] flex justify-center rounded-full mx-auto my-8 lg:hidden">
@@ -112,7 +112,7 @@ export default async function Home() {
       </div>
       <div
         id="bio"
-        className="flex flex-col-reverse items-center xl:flex-row-reverse justify-center gap-16 xl:gap-48 bg-secondary grid-full-width min-h-svh py-24 overflow-visible px-6"
+        className="flex flex-col-reverse items-center xl:flex-row-reverse justify-center gap-16 xl:gap-48 bg-secondary grid-full-width min-h-screen py-24 overflow-visible px-6"
       >
         <main className="flex flex-col gap-4 max-w-md items-center xl:my-auto">
           <h3 className="font-semibold">About Me</h3>
@@ -124,9 +124,13 @@ export default async function Home() {
             connect and collaborate with fellow enthusiasts.
           </p>
           <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-between gap-8 min-w-full">
-            <button className="bg-primary py-3 rounded-md sm:w-48 hover:bg-secondary hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out">
+            <Link
+              href="https://drive.google.com/drive/folders/1v-6Hu1JvhI1a9L7WJb48h2wvDhfVxj0s?usp=sharing"
+              target="_blank"
+              className="bg-primary py-3 rounded-md sm:w-48 hover:bg-secondary hover:outline hover:outline-primary hover:outline-2 transition-transform ease-in-out text-center"
+            >
               Get My CV
-            </button>
+            </Link>
             <Link
               href="#projects"
               className="sm:w-48 py-3 rounded-md text-center outline outline-primary outline-2 hover:bg-primary transition-transform ease-in-out"
@@ -145,7 +149,7 @@ export default async function Home() {
           />
         </aside>
       </div>
-      <div id="projects" className="flex flex-col gap-8">
+      <div id="projects" className="flex flex-col gap-8 min-h-screen py-8">
         <h3 className="text-center mt-4 font-semibold">My Projects</h3>
         <div className="flex flex-wrap justify-center gap-8">
           {projects &&

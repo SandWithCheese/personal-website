@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 251 62% 95%;
@@ -25,7 +25,7 @@
     --ring: 250 63% 40%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 251 62% 5%;
     --foreground: 249 61% 94%;
@@ -48,7 +48,7 @@
     --ring: 250 63% 60%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -66,7 +66,6 @@ html {
   display: grid;
   grid-template-columns: [full-width-start] 200px [content-start] 1fr [content-end] 200px [full-width-end];
   width: 100%;
-  row-gap: 8rem;
 }
 
 @media (max-width: 1023px) {
@@ -83,11 +82,11 @@ html {
   h1 {
     font-size: 32px !important;
   }
-  
+
   h2 {
     font-size: 24px !important;
   }
-  
+
   h3 {
     font-size: 20px !important;
   }

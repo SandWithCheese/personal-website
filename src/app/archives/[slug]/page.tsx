@@ -87,7 +87,7 @@ async function page({ params }: { params: { slug: string } }) {
   })
 
   return (
-    <div className="flex flex-col gap-8 justify-self-center xl:w-[900px]">
+    <div className="flex flex-col gap-8 justify-self-center xl:w-[900px] py-12">
       <div>
         <h1>{archive.name}</h1>
         <p>{dateString}</p>
