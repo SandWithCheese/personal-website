@@ -29,7 +29,7 @@ async function page() {
   return (
     <div className="flex flex-col gap-8 py-12">
       <h2 className="text-center font-medium sm:text-start">Archives</h2>
-      <div className="flex flex-col items-center gap-8 sm:grid sm:grid-cols-12 sm:items-stretch">
+      <div className="grid grid-cols-1 place-items-center gap-8 sm:grid-cols-12 sm:place-items-start sm:items-stretch">
         {archives &&
           archives.map((archive: Archive) => (
             <Archives key={archive._id} archive={archive} />

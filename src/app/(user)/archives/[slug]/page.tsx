@@ -8,6 +8,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import Audio from "./audio";
+
 export const revalidate = 60;
 
 export async function generateMetadata({
@@ -72,8 +74,19 @@ async function page({ params }: { params: { slug: string } }) {
     day: "numeric",
   });
 
+  const song = {
+    name: archive.audioTitle!,
+    writer: archive.audioAuthor!,
+    src: archive.audio!,
+  };
+
+  const hasAudio =
+    archive.audio !== null &&
+    archive.audioTitle !== null &&
+    archive.audioAuthor !== null;
+
   return (
-    <div className="flex flex-col gap-8 justify-self-center py-12 xl:w-[900px]">
+    <div className="relative flex flex-col gap-8 justify-self-center py-12 xl:w-[900px]">
       <div>
         <h1>{archive.name}</h1>
         <p>{dateString}</p>
@@ -83,7 +96,7 @@ async function page({ params }: { params: { slug: string } }) {
         <Image
           src={archive.thumbnail}
           fill
-          alt="thumbnail"
+          alt={archive.thumbnailAlt}
           className="object-cover"
         />
       </div>
@@ -99,6 +112,8 @@ async function page({ params }: { params: { slug: string } }) {
           }}
         />
       </div>
+
+      {hasAudio && <Audio song={song} />}
     </div>
   );
 }

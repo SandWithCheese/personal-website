@@ -7,4 +7,5 @@ export type Project = {
   image: string;
   url: string;
   techstack: string[];
+  publishedAt: string;
 };

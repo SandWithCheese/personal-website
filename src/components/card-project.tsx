@@ -10,35 +10,35 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 
-function CardProject(props: { project: Project }) {
+function CardProject({ project }: { project: Project }) {
   return (
     <Card className="flex min-h-[550px] max-w-96 flex-col gap-4 rounded-xl border-none bg-secondary transition-transform ease-in-out hover:scale-105">
       <CardContent className="flex flex-grow flex-col gap-8 p-0">
         <div className="relative aspect-video w-full">
           <Image
-            src={props.project.image}
+            src={project.image}
             fill
             alt="image"
             className="rounded-t-xl object-cover"
           />
         </div>
         <div className="flex flex-col gap-4 px-6">
-          <CardTitle className="font-medium">{props.project.name}</CardTitle>
+          <CardTitle className="font-medium">{project.name}</CardTitle>
           <CardDescription className="text-md text-justify text-foreground">
-            <PortableText value={props.project.description} />
+            <PortableText value={project.description} />
           </CardDescription>
         </div>
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-4">
         <div>
           <p className="font-semibold">Tech Stacks:</p>
-          <p>{props.project.techstack.join(", ")}</p>
+          <p>{project.techstack.join(", ")}</p>
         </div>
         <Link
-          href={props.project.url}
+          href={project.url}
           target="_blank"
           className="self-start justify-self-end"
-          aria-label={props.project.name}
+          aria-label={project.name}
         >
           <svg
             viewBox="0 0 128 128"

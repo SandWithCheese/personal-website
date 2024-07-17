@@ -1,6 +1,6 @@
-import { createClient, groq } from "next-sanity";
 import { Archive } from "@/types/Archive";
 import { Project } from "@/types/Project";
+import { createClient, groq } from "next-sanity";
 
 export async function getProjects(): Promise<Project[] | null> {
   const client = createClient({
@@ -39,6 +39,7 @@ export async function getArchives(): Promise<Archive[] | null> {
         slug,
         description,
         "thumbnail": image.asset->url,
+        "thumbnailAlt": image.alt,
         content,
         publishedAt,
     }`,
@@ -61,7 +62,11 @@ export async function getArchive(slug: string): Promise<Archive | null> {
       slug,
       description,
       "thumbnail": image.asset->url,
+      "thumbnailAlt": image.alt,
       content,
+      "audio": audio.asset->url,
+      "audioTitle": audio.title,
+      "audioAuthor": audio.author,
       publishedAt,
     }[0]`,
   );

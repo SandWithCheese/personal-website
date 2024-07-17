@@ -10,7 +10,12 @@ export type Archive = {
   };
   description: PortableTextBlock[];
   thumbnail: string;
+  thumbnailAlt: string;
   content: PortableTextBlock[];
+  audio: string | null;
+  audioTitle: string | null;
+  audioAuthor: string | null;
+  publishedAt: string;
 };
 
 export type Description = {

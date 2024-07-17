@@ -45,6 +45,26 @@ const archive = {
       of: [{ type: "block" }, customImage, externalLink],
     },
     {
+      name: "audio",
+      title: "Audio",
+      type: "file",
+      options: {
+        accept: "audio/*",
+      },
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "author",
+          title: "Author",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
