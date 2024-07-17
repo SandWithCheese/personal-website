@@ -3,19 +3,18 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Project } from "../../types/Project"
-import { PortableText } from "@portabletext/react"
-import Image from "next/image"
-import Link from "next/link"
+} from "@/components/ui/card";
+import { Project } from "@/types/Project";
+import { PortableText } from "@portabletext/react";
+import Image from "next/image";
+import Link from "next/link";
 
 function CardProject(props: { project: Project }) {
   return (
-    <Card className="bg-secondary flex flex-col rounded-xl gap-4 min-h-[550px] max-w-96 border-none hover:scale-105 transition-transform ease-in-out">
-      <CardContent className="flex flex-col gap-8 flex-grow p-0">
-        <div className="relative w-full aspect-video">
+    <Card className="flex min-h-[550px] max-w-96 flex-col gap-4 rounded-xl border-none bg-secondary transition-transform ease-in-out hover:scale-105">
+      <CardContent className="flex flex-grow flex-col gap-8 p-0">
+        <div className="relative aspect-video w-full">
           <Image
             src={props.project.image}
             fill
@@ -23,9 +22,9 @@ function CardProject(props: { project: Project }) {
             className="rounded-t-xl object-cover"
           />
         </div>
-        <div className="px-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 px-6">
           <CardTitle className="font-medium">{props.project.name}</CardTitle>
-          <CardDescription className="text-md text-foreground text-justify">
+          <CardDescription className="text-md text-justify text-foreground">
             <PortableText value={props.project.description} />
           </CardDescription>
         </div>
@@ -38,12 +37,12 @@ function CardProject(props: { project: Project }) {
         <Link
           href={props.project.url}
           target="_blank"
-          className="justify-self-end self-start"
+          className="self-start justify-self-end"
           aria-label={props.project.name}
         >
           <svg
             viewBox="0 0 128 128"
-            className="w-10 h-10 fill-accent hover:fill-primary transition ease-in-out"
+            className="h-10 w-10 fill-accent transition ease-in-out hover:fill-primary"
           >
             <path
               fillRule="evenodd"
@@ -54,7 +53,7 @@ function CardProject(props: { project: Project }) {
         </Link>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
-export default CardProject
+export default CardProject;

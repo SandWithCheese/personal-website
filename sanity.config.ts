@@ -1,6 +1,6 @@
-import { defineConfig } from "sanity"
-import { deskTool } from "sanity/desk"
-import schemas from "./sanity/schemas"
+import { defineConfig } from "sanity";
+import { structureTool } from "sanity/structure";
+import schemas from "./src/sanity/schemas";
 
 const config = defineConfig({
   title: "Personal Website",
@@ -11,9 +11,9 @@ const config = defineConfig({
 
   basePath: "/admin",
 
-  plugins: [deskTool()],
+  plugins: [structureTool()],
 
   schema: { types: schemas },
-})
+});
 
-export default config
+export default config;

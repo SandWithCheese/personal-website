@@ -1,16 +1,16 @@
-import Link from "next/link"
+import Link from "next/link";
 
 function Footer() {
   return (
     <footer className="wrapper">
-      <div className="bg-secondary grid-full-width flex flex-col gap-6 py-6">
+      <div className="grid-full-width flex flex-col gap-6 bg-secondary py-6">
         <div className="flex justify-center gap-6">
           <Link href="mailto:naufalahmad022@gmail.com" aria-label="Email">
             <svg
               width="48"
               height="48"
               viewBox="0 0 48 48"
-              className="fill-accent hover:fill-primary transition ease-in-out w-10 h-10"
+              className="h-10 w-10 fill-accent transition ease-in-out hover:fill-primary"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -29,7 +29,7 @@ function Footer() {
               width="48"
               height="48"
               viewBox="0 0 48 48"
-              className="fill-accent hover:fill-primary transition ease-in-out w-10 h-10"
+              className="h-10 w-10 fill-accent transition ease-in-out hover:fill-primary"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -83,7 +83,7 @@ function Footer() {
               width="48"
               height="48"
               viewBox="0 0 48 48"
-              className="fill-accent hover:fill-primary transition ease-in-out w-10 h-10"
+              className="h-10 w-10 fill-accent transition ease-in-out hover:fill-primary"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -102,7 +102,7 @@ function Footer() {
               width="48"
               height="48"
               viewBox="0 0 48 48"
-              className="fill-accent hover:fill-primary transition ease-in-out w-10 h-10"
+              className="h-10 w-10 fill-accent transition ease-in-out hover:fill-primary"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -126,7 +126,7 @@ function Footer() {
         <p className="text-center">2023© Sandwicheese - All Rights Reserved</p>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

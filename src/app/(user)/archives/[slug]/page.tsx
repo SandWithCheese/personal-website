@@ -1,37 +1,28 @@
-import { Skeleton } from "@/components/ui/skeleton"
-import { getArchive, getArchives } from "../../../../sanity/sanity-utils"
-import Image from "next/image"
-import { PortableText } from "@portabletext/react"
-import urlBuilder from "@sanity/image-url"
-import { getImageDimensions } from "@sanity/asset-utils"
-import Link from "next/link"
-import type { Metadata, Viewport } from "next"
-import { Description } from "../../../../types/Archive"
+import { Skeleton } from "@/components/ui/skeleton";
+import { getArchive } from "@/sanity/sanity-utils";
+import { Description } from "@/types/Archive";
+import { PortableText } from "@portabletext/react";
+import { getImageDimensions } from "@sanity/asset-utils";
+import urlBuilder from "@sanity/image-url";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
-export const revalidate = 60
-
-export const viewport: Viewport = {
-  colorScheme: "dark",
-  themeColor: "#271971",
-}
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const archive = await getArchive(params.slug)
-  const archives = await getArchives()
+  const archive = await getArchive(params.slug);
 
-  if (archive === null || archives === null) {
-    return undefined
+  if (archive === null) {
+    return undefined;
   }
 
-  const id = archive._id
-  const index = archives.findIndex((archive) => archive._id === id)
-
-  const description = archives[index].description[0].children as Description[]
-  const descriptionText = description[0].text
+  const description = archive.description[0].children as Description[];
+  const descriptionText = description[0].text;
 
   return {
     title: archive.name,
@@ -43,11 +34,6 @@ export async function generateMetadata({
       "Ahmad Naufal Ramadan",
       ...archive.name.split(" "),
     ],
-    verification: {
-      google: "fv_CNbFwrtMZ1V0Z2RV4p3t48ULjscLJ97A_P08DT8E",
-      yandex: "yandex",
-      yahoo: "yahoo",
-    },
     openGraph: {
       title: archive.name,
       description: descriptionText,
@@ -69,25 +55,25 @@ export async function generateMetadata({
       title: archive.name,
       description: descriptionText,
     },
-  }
+  };
 }
 
 async function page({ params }: { params: { slug: string } }) {
-  const archive = await getArchive(params.slug)
+  const archive = await getArchive(params.slug);
 
   if (archive === null) {
-    return <Skeleton />
+    return <Skeleton />;
   }
 
-  const date = new Date(archive._createdAt)
+  const date = new Date(archive._createdAt);
   const dateString = date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  })
+  });
 
   return (
-    <div className="flex flex-col gap-8 justify-self-center xl:w-[900px] py-12">
+    <div className="flex flex-col gap-8 justify-self-center py-12 xl:w-[900px]">
       <div>
         <h1>{archive.name}</h1>
         <p>{dateString}</p>
@@ -102,7 +88,7 @@ async function page({ params }: { params: { slug: string } }) {
         />
       </div>
 
-      <div className="flex flex-col gap-8 justify-self-center xl:w-[900px] leading-8 text-base sm:text-lg">
+      <div className="flex flex-col gap-8 justify-self-center text-base leading-8 sm:text-lg xl:w-[900px]">
         <PortableText
           value={archive.content}
           components={{
@@ -114,17 +100,17 @@ async function page({ params }: { params: { slug: string } }) {
         />
       </div>
     </div>
-  )
+  );
 }
 
 const ImageComponent = ({
   value,
 }: {
-  value: { asset: { _ref: string }; alt: string }
+  value: { asset: { _ref: string }; alt: string };
 }) => {
-  const { width, height } = getImageDimensions(value)
+  const { width, height } = getImageDimensions(value);
   return (
-    <div className="max-w-[600px] self-center flex flex-col gap-2">
+    <div className="flex max-w-[600px] flex-col gap-2 self-center">
       <Image
         src={urlBuilder({ projectId: "s4v7i3a0", dataset: "production" })
           .image(value)
@@ -136,19 +122,19 @@ const ImageComponent = ({
       />
       <p className="text-center">{value.alt}</p>
     </div>
-  )
-}
+  );
+};
 
 const hyperlinkComponent = ({
   value,
 }: {
-  value: { href: string; hyperlink: string }
+  value: { href: string; hyperlink: string };
 }) => {
   return (
     <Link href={value.href} target="_blank" className="underline">
       {value.hyperlink}
     </Link>
-  )
-}
+  );
+};
 
-export default page
+export default page;

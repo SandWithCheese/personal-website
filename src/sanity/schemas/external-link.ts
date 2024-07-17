@@ -14,6 +14,6 @@ const externalLink = {
       type: "string",
     },
   ],
-}
+};
 
-export default externalLink
+export default externalLink;

@@ -12,6 +12,6 @@ const customImage = {
       type: "string",
     },
   ],
-}
+};
 
-export default customImage
+export default customImage;

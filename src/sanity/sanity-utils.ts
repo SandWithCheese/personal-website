@@ -1,6 +1,6 @@
-import { createClient, groq } from "next-sanity"
-import { Archive } from "../types/Archive"
-import { Project } from "../types/Project"
+import { createClient, groq } from "next-sanity";
+import { Archive } from "@/types/Archive";
+import { Project } from "@/types/Project";
 
 export async function getProjects(): Promise<Project[] | null> {
   const client = createClient({
@@ -8,18 +8,19 @@ export async function getProjects(): Promise<Project[] | null> {
     dataset: "production",
     apiVersion: "2023-12-24",
     useCdn: true,
-  })
+  });
 
   return client.fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "project"]|order(publishedAt desc){
         _id,
         name,
         description,
         "image": image.asset->url,
         techstack,
         url,
-    }`
-  )
+        publishedAt,
+    }`,
+  );
 }
 
 export async function getArchives(): Promise<Archive[] | null> {
@@ -28,10 +29,10 @@ export async function getArchives(): Promise<Archive[] | null> {
     dataset: "production",
     apiVersion: "2023-12-24",
     useCdn: true,
-  })
+  });
 
   return client.fetch(
-    groq`*[_type == "archive"]{
+    groq`*[_type == "archive"]|order(publishedAt desc){
         _id,
         _createdAt,
         name,
@@ -39,8 +40,9 @@ export async function getArchives(): Promise<Archive[] | null> {
         description,
         "thumbnail": image.asset->url,
         content,
-    }`
-  )
+        publishedAt,
+    }`,
+  );
 }
 
 export async function getArchive(slug: string): Promise<Archive | null> {
@@ -49,7 +51,7 @@ export async function getArchive(slug: string): Promise<Archive | null> {
     dataset: "production",
     apiVersion: "2023-12-24",
     useCdn: true,
-  })
+  });
 
   return client.fetch(
     groq`*[_type == "archive" && slug.current == '${slug}']{
@@ -60,6 +62,7 @@ export async function getArchive(slug: string): Promise<Archive | null> {
       description,
       "thumbnail": image.asset->url,
       content,
-    }[0]`
-  )
+      publishedAt,
+    }[0]`,
+  );
 }

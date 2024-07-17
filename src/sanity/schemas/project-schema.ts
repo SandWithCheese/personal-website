@@ -1,21 +1,12 @@
-import customImage from "./custom-image"
-import externalLink from "./external-link"
-
-const archive = {
-  name: "archive",
-  title: "Archives",
+const project = {
+  name: "project",
+  title: "Projects",
   type: "document",
   fields: [
     {
       name: "name",
-      title: "Title",
+      title: "Project Name",
       type: "string",
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: { source: "name" },
     },
     {
       name: "description",
@@ -25,7 +16,7 @@ const archive = {
     },
     {
       name: "image",
-      title: "Thumbnail",
+      title: "Image",
       type: "image",
       options: {
         hotspot: true,
@@ -39,12 +30,22 @@ const archive = {
       ],
     },
     {
-      name: "content",
-      title: "Content",
+      name: "techstack",
+      title: "Tech Stack",
       type: "array",
-      of: [{ type: "block" }, customImage, externalLink],
+      of: [{ type: "string" }],
+    },
+    {
+      name: "url",
+      title: "URL",
+      type: "url",
+    },
+    {
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
     },
   ],
-}
+};
 
-export default archive
+export default project;
