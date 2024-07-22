@@ -1,0 +1,14 @@
+{
+  "name": "Sandwicheese",
+  "short_name": "Sandwicheese",
+  "start_url": "https://sandwicheese.vercel.app/",
+  "display": "browser",
+  "description": "Hi! I'm Naufal, a software engineer and CTF enthusiast. Committed to mastering both domains, I focus on developing secure software and conquering CTF challenges. Seeking to gain more experience and knowledge to make a positive impact in these fields. Ready to connect and collaborate with fellow enthusiasts.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "128x128",
+      "type": "image/x-icon"
+    }
+  ]
+}
