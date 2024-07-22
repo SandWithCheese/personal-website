@@ -2,6 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { getProjects } from "@/sanity/sanity-utils";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 import ProjectsPagination from "./projects-pagination";
 
@@ -29,7 +30,9 @@ async function page() {
   return (
     <div className="flex flex-col gap-8 py-12">
       <h2 className="text-center font-medium sm:text-start">My Projects</h2>
-      <ProjectsPagination projects={projects} />
+      <Suspense fallback={<Skeleton />}>
+        <ProjectsPagination projects={projects} />
+      </Suspense>
     </div>
   );
 }

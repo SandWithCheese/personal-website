@@ -2,11 +2,10 @@
 
 import CardProject from "@/components/card-project";
 import { ClientPagination } from "@/components/client-pagination";
-import { Skeleton } from "@/components/ui/skeleton";
 import { isPageValid } from "@/lib/validate-pagination";
 import { Project } from "@/types/Project";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { useEffect } from "react";
 
 function ProjectsPagination({ projects }: { projects: Project[] }) {
   // Router
@@ -33,7 +32,7 @@ function ProjectsPagination({ projects }: { projects: Project[] }) {
   }, [page, router, searchParams, total]);
 
   return (
-    <Suspense fallback={<Skeleton />}>
+    <>
       <div className="grid grid-cols-1 place-items-center gap-8 sm:grid-cols-12 sm:place-items-start sm:items-stretch">
         {projects &&
           projects
@@ -46,7 +45,7 @@ function ProjectsPagination({ projects }: { projects: Project[] }) {
       <div className="flex grow flex-col justify-end">
         <ClientPagination total={total} totalPerPage={totalPerPage} />
       </div>
-    </Suspense>
+    </>
   );
 }
 
