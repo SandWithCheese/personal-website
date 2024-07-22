@@ -1,9 +1,9 @@
-import Archives from "@/components/archives";
 import { Skeleton } from "@/components/ui/skeleton";
 import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { getArchives } from "@/sanity/sanity-utils";
-import { Archive } from "@/types/Archive";
 import { Metadata } from "next";
+
+import ArchivesPagination from "./archives-pagination";
 
 export const revalidate = 60;
 
@@ -29,12 +29,7 @@ async function page() {
   return (
     <div className="flex flex-col gap-8 py-12">
       <h2 className="text-center font-medium sm:text-start">Archives</h2>
-      <div className="grid grid-cols-1 place-items-center gap-8 sm:grid-cols-12 sm:place-items-start sm:items-stretch">
-        {archives &&
-          archives.map((archive: Archive) => (
-            <Archives key={archive._id} archive={archive} />
-          ))}
-      </div>
+      <ArchivesPagination archives={archives} />
     </div>
   );
 }

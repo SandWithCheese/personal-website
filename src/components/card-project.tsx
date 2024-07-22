@@ -12,7 +12,7 @@ import Link from "next/link";
 
 function CardProject({ project }: { project: Project }) {
   return (
-    <Card className="flex min-h-[550px] max-w-96 flex-col gap-4 rounded-xl border-none bg-secondary transition-transform ease-in-out hover:scale-105">
+    <Card className="flex min-h-[450px] w-full max-w-96 flex-col gap-4 rounded-lg border-none bg-secondary transition-transform ease-in-out hover:scale-105 sm:col-span-6 sm:w-full lg:col-span-6 xl:col-span-4">
       <CardContent className="flex flex-grow flex-col gap-8 p-0">
         <div className="relative aspect-video w-full">
           <Image
@@ -24,7 +24,7 @@ function CardProject({ project }: { project: Project }) {
         </div>
         <div className="flex flex-col gap-4 px-6">
           <CardTitle className="font-medium">{project.name}</CardTitle>
-          <CardDescription className="text-md text-justify text-foreground">
+          <CardDescription className="text-md line-clamp-5 text-justify text-foreground">
             <PortableText value={project.description} />
           </CardDescription>
         </div>
