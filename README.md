@@ -1,3 +1,19 @@
+## Description
+
+This is the personal portfolio website of **Ahmad Naufal Ramadan (Sandwicheese)**, an Informatics Engineering student at Bandung Institute of Technology and a software engineer and CTF enthusiast. The site showcases his projects, background, and achievements in software engineering and Capture The Flag (CTF) competitions. Content (projects and blog-style archives) is managed through [Sanity](https://www.sanity.io/) as a headless CMS, while the frontend is built with [Next.js](https://nextjs.org/), TypeScript, and Tailwind CSS.
+
+## Objective
+
+The objective of this project is to provide a clean, performant, and easily maintainable personal website that:
+
+- Introduces Ahmad Naufal Ramadan and his background.
+- Showcases his software engineering projects with descriptions, tech stacks, and links.
+- Hosts an archive of write-ups or blog-style posts (with optional audio support).
+- Supports both light and dark themes for an accessible reading experience.
+- Demonstrates modern web development best practices using Next.js 14 (App Router), TypeScript, Tailwind CSS, and a headless CMS (Sanity).
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
